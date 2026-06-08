@@ -1,9 +1,0 @@
- tsconfig file to tell TypeScript how it should transpile our typescript code to javascript
-
- By defining types, we ensure any deviation from the expected structure is caught early.
-
- const data: Card = JSON.parse(jsonString);
- interface Card {
-  "quesion":string,
-  "answer":string
-}
