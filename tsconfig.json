@@ -1,0 +1,16 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "sourceMap": true,
+    "moduleResolution": "NodeNext",
+     "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "jsx": "react-jsx",
+     "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
