@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 import express, { Request, Response , Application   } from 'express';
 import fs from 'fs'
-
+import cors from 'cors'
 
 
 interface Card {
@@ -12,7 +12,15 @@ interface Card {
 
 // Initialize Express app
 const app :Application  = express();
-const PORT = process.env.PORT || 3000;
+
+app.use(cors({
+  origin: "http://localhost:5173"
+}));
+
+const PORT = 3000;
+
+
+//middlware
 
 
 //read file function 
@@ -29,7 +37,7 @@ const readQuestionsFile = async (): Promise<Card[]> => {
 }
 
 //routes
-app.get("/JsonFile", async (req: Request, res: Response) => {
+app.get("/api/JsonFile", async (req: Request, res: Response) => {
    try{
   const data = await readQuestionsFile();
   res.status(200).json(data);
