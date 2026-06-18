@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the critical rendering path in web browsers?",
+    "answer": "The sequence of steps a browser takes to convert HTML, CSS, and JavaScript into pixels on the screen: constructing the DOM tree, constructing the CSSOM tree, combining them into the render tree, calculating the layout (or reflow) of each visible element, and finally painting the pixels to the screen."
+  },
+  {
+    "question": "What is the layout phase in browser rendering?",
+    "answer": "The process where the browser calculates the exact position and size of every visible element on the page based on the render tree, the viewport dimensions, and the box model rules, determining where each element should appear on the screen."
+  },
+  {
+    "question": "What is layout thrashing in browser rendering performance?",
+    "answer": "A performance problem that occurs when JavaScript repeatedly reads layout properties (such as offsetHeight or getBoundingClientRect) and then immediately writes to style properties that invalidate those layout values, forcing the browser to perform synchronous layout recalculations multiple times within a single frame."
+  },
+  {
+    "question": "What is the painting phase in browser rendering?",
+    "answer": "The process where the browser fills in pixels for every visual element on the page, including text, colors, borders, shadows, and images, by drawing them onto layers in the correct stacking order, typically starting from the background and moving to foreground elements."
+  },
+  {
+    "question": "What is repainting in browser rendering performance?",
+    "answer": "The process where the browser redraws the visual appearance of an element without changing its position or size, triggered by style changes such as background color, text color, or visibility, and which is less expensive than layout but still costly if performed too frequently."
+  },
+  {
+    "question": "What is compositing in browser rendering?",
+    "answer": "The process where the browser takes multiple painted layers (such as the main page, positioned elements, video, or 3D transforms) and combines them in the correct order onto the final screen image, often using the GPU for efficiency."
+  },
+  {
+    "question": "What is a UI library in frontend development?",
+    "answer": "A collection of reusable, pre-built components such as buttons, modals, form inputs, and layout grids, along with their associated styles and behaviors, which developers can import and use directly to build user interfaces faster without writing every UI element from scratch."
+  },
+  {
+    "question": "What is CORS in web development?",
+    "answer": "A security mechanism that allows a web page running from one origin to request resources from a different origin, based on HTTP headers sent by the server that tell the browser whether to permit or block the cross-origin request."
+  },
+  {
+    "question": "What does the useLayoutEffect hook do in React?",
+    "answer": "It runs a side effect function synchronously after the DOM has been mutated but before the browser has painted those changes to the screen, making it useful for reading layout measurements or synchronously mutating the DOM in a way that avoids visual flicker."
+  },
+  {
+    "question": "What are Core Web Vitals in web performance?",
+    "answer": "A set of three standardized metrics that measure real-world user experience on a web page: Largest Contentful Paint (LCP) measures loading performance, Interaction to Next Paint (INP) measures responsiveness, and Cumulative Layout Shift (CLS) measures visual stability."
+  }
+]

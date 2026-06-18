@@ -10,22 +10,30 @@ interface Card {
   "answer":string
 }
 
+const LEVEL_FILES: Record<string, string> = {
+  '1': './week_1.json',
+  '2': './week_2.json',
+  '3': './week_3.json',
+}
+
 // Initialize Express app
 const app :Application  = express();
 
+
+//middlware
 app.use(cors({
   origin: "http://localhost:5173"
 }));
 
+
+
 const PORT = 3000;
 
 
-//middlware
-
 
 //read file function 
-const readQuestionsFile = async (): Promise<Card[]> => {
-  const filePath: string = './week_2.json';
+const readQuestionsFile = async (filePath: string): Promise<Card[]> => {
+ 
   try{
   const jsonString = await fs.promises.readFile(filePath, 'utf8');
   return JSON.parse(jsonString);
@@ -37,15 +45,39 @@ const readQuestionsFile = async (): Promise<Card[]> => {
 }
 
 //routes
-app.get("/api/JsonFile", async (req: Request, res: Response) => {
+// app.get("/api/JsonFile", async (req: Request, res: Response) => {
+//    try{
+//   const data = await readQuestionsFile();
+//   res.status(200).json(data);
+//    }
+//    catch(err){
+//           res.status(500).json({ error: 'Failed to read questions file' });
+
+//    }})
+
+
+
+   app.get<{ id: string }>("/api/JsonFile/:id", async (req, res) => {
+
+  const levelId = req.params.id;
+  const filePath = LEVEL_FILES[levelId];
+  console.log(levelId, filePath)
+   if (!filePath) {
+    return res.status(400).json({ error: `Invalid level: ${levelId}` });
+  }
+
    try{
-  const data = await readQuestionsFile();
+  const data = await readQuestionsFile(filePath);
   res.status(200).json(data);
    }
    catch(err){
           res.status(500).json({ error: 'Failed to read questions file' });
 
    }})
+
+
+
+
 
    app.get('/',async (req:Request,res:Response)=>{
       res.status(200).send("Hello World This Raghad Habib, A future lead developer.")
