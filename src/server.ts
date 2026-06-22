@@ -14,6 +14,7 @@ const LEVEL_FILES: Record<string, string> = {
   '1': './week_1.json',
   '2': './week_2.json',
   '3': './week_3.json',
+  '4': './week_4.json',
 }
 
 // Initialize Express app
@@ -57,7 +58,7 @@ const readQuestionsFile = async (filePath: string): Promise<Card[]> => {
 
 
 
-   app.get<{ id: string }>("/api/JsonFile/:id", async (req, res) => {
+   app.get("/api/JsonFile/:id", async (req, res) => {
 
   const levelId = req.params.id;
   const filePath = LEVEL_FILES[levelId];
