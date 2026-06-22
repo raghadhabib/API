@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the the event loop in JavaScript?",
+    "answer": "A runtime mechanism that runs continuously to manage the execution of multiple tasks without blocking the main thread."
+  },
+  {
+    "question": "What does it mean for an HTTP API to be RESTful?",
+    "answer": "An architectural style where resources are identified by URLs, and the API is stateless, meaning that each request from a client to the server must contain all the information needed to process the request."
+  },
+  {
+    "question": "What is immutability in programming?",
+    "answer": "A principle where data cannot be changed after it is created; any modification produces a new copy of the data, leaving the original unchanged, which helps prevent unintended side effects and makes state changes more predictable."
+  },
+  {
+    "question": "What is a pure function in programming?",
+    "answer": "A function that always returns the same output for the same input and produces no side effects."
+  },
+  {
+    "question": "What is the useReducer hook used for in React?",
+    "answer": "It is used to manage complex state logic by dispatching actions to a reducer function that takes the current state and an action, then returns the new state based on the action type."
+  },
+  {
+    "question": "What are algebraic data types in functional programming?",
+    "answer": "A way of composing types using products (records) and sums (unions) to model data structures precisely."
+  },
+  {
+    "question": "What is a product type in functional programming?",
+    "answer": "A composite type that holds multiple values simultaneously, such as a tuple or record, representing a logical AND combination"
+  },
+  {
+    "question": "What is a sum type in functional programming?",
+    "answer": "A composite type that represents a choice between multiple variants, such as an enum or union, representing a logical OR combination."
+  },
+  {
+    "question": "What is React Context used for?",
+    "answer": "A way to pass data through the component tree without manually passing props down at every level."
+  },
+  {
+    "question": "What is React's Strict Mode?",
+    "answer": "A development-only tool that highlights potential problems by intentionally running certain lifecycle methods and effects twice to detect side-effect issues."
+  }
+]
