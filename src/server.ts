@@ -14,6 +14,7 @@ const LEVEL_FILES: Record<string, string> = {
   "2": "./week_2.json",
   "3": "./week_3.json",
   "4": "./week_4.json",
+  "5": "./week_5❤️.json",
 };
 
 // Initialize Express app
